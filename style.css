@@ -1,43 +1,50 @@
-/* Style général du site */
-body {
+body, html {
+  height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif; /* police arrondie simple */
-  background-color: #f5f0dc; /* Beige */
-  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-/* Titre principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* titre en haut, boutons milieu, footer bas */
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f0dc;
+}
+
 h1 {
   text-transform: uppercase;
-  font-size: 3em;
-  margin: 20px 0;
-  font-family: 'Arial Rounded MT Bold', sans-serif; /* formes arrondies */
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  margin-top: 20px;
 }
 
-/* Boutons principaux et produits */
+.main-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
 .button, .product-btn, .confirm-btn, #backBtn {
-  background-color: #a67c52; /* Marron clair */
-  color: #f5f0dc; /* Texte beige sur marron */
+  background-color: #a67c52;
+  color: #f5f0dc;
   border: none;
   padding: 15px 25px;
   margin: 10px;
-  border-radius: 20px; /* arrondi */
+  border-radius: 20px;
   cursor: pointer;
-  font-size: 1em;
 }
 
-/* Hover sur boutons */
 .button:hover, .product-btn:hover, .confirm-btn:hover, #backBtn:hover {
   opacity: 0.8;
 }
 
-/* Produits (cachés par défaut) */
 .product {
   display: none;
-  margin-top: 20px;
 }
 
-/* Image des produits */
 .product img {
   width: 150px;
   height: 150px;
@@ -46,7 +53,6 @@ h1 {
   margin: 0 auto 10px;
 }
 
-/* Bouton retour */
 #backBtn {
   position: absolute;
   top: 20px;
@@ -54,14 +60,11 @@ h1 {
   display: none;
 }
 
-/* Zone de réservation (cachée par défaut) */
 .reservation {
   display: none;
   margin-top: 10px;
 }
 
-/* Footer */
 footer {
-  margin-top: 50px;
-  font-size: 0.9em;
+  margin-bottom: 10px;
 }
