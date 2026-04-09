@@ -3,202 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <title>Boolangerie</title>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f0dc; /* Beige */
-    text-align: center;
-  }
-  h1 {
-    text-transform: uppercase;
-    font-size: 3em;
-    margin: 20px 0;
-    font-family: 'Arial Rounded MT Bold', sans-serif;
-  }
-  .button, .product-btn, .confirm-btn, #backBtn {
-    background-color: #a67c52; /* Marron clair */
-    color: #f5f0dc; /* Texte beige sur marron */
-    border: none;
-    padding: 15px 25px;
-    margin: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  .button:hover, .product-btn:hover, .confirm-btn:hover, #backBtn:hover {
-    opacity: 0.8;
-  }
-  .product {
-    display: none;
-    margin-top: 20px;
-  }
-  .product img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 10px;
-  }
-  #backBtn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: none;
-  }
-  .reservation {
-    display: none;
-    margin-top: 10px;
-  }
-  footer {
-    margin-top: 50px;
-    font-size: 0.9em;
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Boolangerie</h1>
+<div class="container">
 
-<div id="home">
-  <button class="button" onclick="showCategory('pain')">Pain</button>
-  <button class="button" onclick="showCategory('patisserie')">Pâtisserie</button>
-  <button class="button" onclick="showCategory('boisson')">Boisson</button>
+  <h1>Boolangerie</h1>
+
+  <div id="home" class="main-buttons">
+    <button class="button" onclick="showCategory('pain')">Pain</button>
+    <button class="button" onclick="showCategory('patisserie')">Pâtisserie</button>
+    <button class="button" onclick="showCategory('boisson')">Boisson</button>
+  </div>
+
+  <button id="backBtn" onclick="goHome()">Retour</button>
+
+  <!-- Pain -->
+  <div id="pain" class="product">
+    <div>
+      <img src="images/images_pain-chocolat.jpg" alt="Pain au chocolat">
+      <button class="product-btn" onclick="showReservation('pain1')">Pain au chocolat</button>
+      <div id="pain1" class="reservation">
+        <input type="date" id="date1"><br>
+        <select id="time1">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Pain au chocolat')">Confirmer</button>
+      </div>
+    </div>
+    <div>
+      <img src="images/images_baguette.jpg" alt="Baguette">
+      <button class="product-btn" onclick="showReservation('pain2')">Baguette</button>
+      <div id="pain2" class="reservation">
+        <input type="date" id="date2"><br>
+        <select id="time2">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Baguette')">Confirmer</button>
+      </div>
+    </div>
+    <div>
+      <img src="images/images_pain-complet.jpg" alt="Pain complet">
+      <button class="product-btn" onclick="showReservation('pain3')">Pain complet</button>
+      <div id="pain3" class="reservation">
+        <input type="date" id="date3"><br>
+        <select id="time3">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Pain complet')">Confirmer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pâtisserie -->
+  <div id="patisserie" class="product">
+    <div>
+      <img src="images/images_tarte-fraise.jpg" alt="Tarte aux fraises">
+      <button class="product-btn" onclick="showReservation('patisserie1')">Tarte aux fraises</button>
+      <div id="patisserie1" class="reservation">
+        <input type="date" id="date4"><br>
+        <select id="time4">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Tarte aux fraises')">Confirmer</button>
+      </div>
+    </div>
+    <div>
+      <img src="images/images_mille-feuille.jpg" alt="Millefeuilles">
+      <button class="product-btn" onclick="showReservation('patisserie2')">Millefeuilles</button>
+      <div id="patisserie2" class="reservation">
+        <input type="date" id="date5"><br>
+        <select id="time5">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Millefeuilles')">Confirmer</button>
+      </div>
+    </div>
+    <div>
+      <img src="images/images_tarte-chocolat.jpg" alt="Tarte au chocolat">
+      <button class="product-btn" onclick="showReservation('patisserie3')">Tarte au chocolat</button>
+      <div id="patisserie3" class="reservation">
+        <input type="date" id="date6"><br>
+        <select id="time6">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Tarte au chocolat')">Confirmer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boissons -->
+  <div id="boisson" class="product">
+    <div>
+      <img src="images/images_coca.jpg" alt="Soda">
+      <button class="product-btn" onclick="showReservation('boisson1')">Soda</button>
+      <div id="boisson1" class="reservation">
+        <input type="date" id="date7"><br>
+        <select id="time7">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Soda')">Confirmer</button>
+      </div>
+    </div>
+    <div>
+      <img src="images/images_café.jpg" alt="Café">
+      <button class="product-btn" onclick="showReservation('boisson2')">Café</button>
+      <div id="boisson2" class="reservation">
+        <input type="date" id="date8"><br>
+        <select id="time8">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Café')">Confirmer</button>
+      </div>
+    </div>
+    <div>
+      <img src="images/images_thé.jpg" alt="Thé">
+      <button class="product-btn" onclick="showReservation('boisson3')">Thé</button>
+      <div id="boisson3" class="reservation">
+        <input type="date" id="date9"><br>
+        <select id="time9">
+          <option value="9-12">9h-12h</option>
+          <option value="12-15">12h-15h</option>
+          <option value="15-18">15h-18h</option>
+        </select><br>
+        <button class="confirm-btn" onclick="confirmReservation('Thé')">Confirmer</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Contact : mail@example.com | 06 12 34 56 78
+  </footer>
+
 </div>
-
-<button id="backBtn" onclick="goHome()">Retour</button>
-
-<div id="pain" class="product">
-  <div>
-    <img src="images_pain-chocolat.jpg" alt="Pain au chocolat">
-    <button class="product-btn" onclick="showReservation('pain1')">Pain au chocolat</button>
-    <div id="pain1" class="reservation">
-      <input type="date" id="date1"><br>
-      <select id="time1">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Pain au chocolat')">Confirmer</button>
-    </div>
-  </div>
-  <div>
-    <img src="images_baguette.jpg" alt="Baguette">
-    <button class="product-btn" onclick="showReservation('pain2')">Baguette</button>
-    <div id="pain2" class="reservation">
-      <input type="date" id="date2"><br>
-      <select id="time2">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Baguette')">Confirmer</button>
-    </div>
-  </div>
-  <div>
-    <img src="images_pain-complet.jpg" alt="Pain complet">
-    <button class="product-btn" onclick="showReservation('pain3')">Pain complet</button>
-    <div id="pain3" class="reservation">
-      <input type="date" id="date3"><br>
-      <select id="time3">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Pain complet')">Confirmer</button>
-    </div>
-  </div>
-</div>
-
-<!-- Pâtisserie -->
-<div id="patisserie" class="product">
-  <div>
-    <img src="images_tarte-fraise.jpg" alt="Tarte aux fraises">
-    <button class="product-btn" onclick="showReservation('patisserie1')">Tarte aux fraises</button>
-    <div id="patisserie1" class="reservation">
-      <input type="date" id="date4"><br>
-      <select id="time4">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Tarte aux fraises')">Confirmer</button>
-    </div>
-  </div>
-  <div>
-    <img src="images_mille-feuille.jpg" alt="Millefeuilles">
-    <button class="product-btn" onclick="showReservation('patisserie2')">Millefeuilles</button>
-    <div id="patisserie2" class="reservation">
-      <input type="date" id="date5"><br>
-      <select id="time5">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Millefeuilles')">Confirmer</button>
-    </div>
-  </div>
-  <div>
-    <img src="images_tarte-chocolat.jpg" alt="Tarte au chocolat">
-    <button class="product-btn" onclick="showReservation('patisserie3')">Tarte au chocolat</button>
-    <div id="patisserie3" class="reservation">
-      <input type="date" id="date6"><br>
-      <select id="time6">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Tarte au chocolat')">Confirmer</button>
-    </div>
-  </div>
-</div>
-
-<!-- Boissons -->
-<div id="boisson" class="product">
-  <div>
-    <img src="images_coca.jpg" alt="Soda">
-    <button class="product-btn" onclick="showReservation('boisson1')">Soda</button>
-    <div id="boisson1" class="reservation">
-      <input type="date" id="date7"><br>
-      <select id="time7">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Soda')">Confirmer</button>
-    </div>
-  </div>
-  <div>
-    <img src="images_café.jpg" alt="Café">
-    <button class="product-btn" onclick="showReservation('boisson2')">Café</button>
-    <div id="boisson2" class="reservation">
-      <input type="date" id="date8"><br>
-      <select id="time8">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Café')">Confirmer</button>
-    </div>
-  </div>
-  <div>
-    <img src="images_thé.jpg" alt="Thé">
-    <button class="product-btn" onclick="showReservation('boisson3')">Thé</button>
-    <div id="boisson3" class="reservation">
-      <input type="date" id="date9"><br>
-      <select id="time9">
-        <option value="9-12">9h-12h</option>
-        <option value="12-15">12h-15h</option>
-        <option value="15-18">15h-18h</option>
-      </select><br>
-      <button class="confirm-btn" onclick="confirmReservation('Thé')">Confirmer</button>
-    </div>
-  </div>
-</div>
-
-<footer>
-  Contact : mail@example.com | 06 12 34 56 78
-</footer>
 
 <script>
 function showCategory(category) {
